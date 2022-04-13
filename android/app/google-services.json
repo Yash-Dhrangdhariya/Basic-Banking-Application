@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "623769608188",
+    "project_id": "new-yash-project",
+    "storage_bucket": "new-yash-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623769608188:android:ecf0302961611c81185c79",
+        "android_client_info": {
+          "package_name": "com.example.balance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623769608188-tr1un3vvkb6r1d8tsajmolg62hgih9uv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB51Yy4EVFZTs93OG8xoHowq9d0oH20atg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623769608188-tr1un3vvkb6r1d8tsajmolg62hgih9uv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
