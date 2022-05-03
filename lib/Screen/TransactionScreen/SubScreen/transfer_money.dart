@@ -122,6 +122,8 @@ class _TransferMoneyState extends State<TransferMoney> {
           amount: _amount,
           time: time,
           url: url,
+          sender: sender,
+          receiver: receiver,
         );
       });
     }
@@ -166,13 +168,21 @@ class _TransferMoneyState extends State<TransferMoney> {
     }
   }
 
-  void _history({String desc, String amount, String time, String url}) async {
+  void _history(
+      {String desc,
+      String amount,
+      String time,
+      String url,
+      String sender,
+      String receiver}) async {
     try {
       _firebaseFirestore.collection('history').doc().set({
         'desc': desc,
         'amount': amount,
         'time': time,
         'image': url,
+        'sender': sender,
+        'receiver': receiver,
       });
     } catch (e) {
       print(e);

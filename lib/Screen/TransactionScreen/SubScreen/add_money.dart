@@ -60,7 +60,13 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
     });
     _updateBalanceToUser(
         balance: currentBalance, user: _currentUser.toLowerCase());
-    _history(desc: desc, amount: _amount, time: time, url: url);
+    _history(
+      desc: desc,
+      amount: _amount,
+      time: time,
+      url: url,
+      user: _currentUser,
+    );
     _readBalanceOfUser(_currentUser.toLowerCase());
   }
 
@@ -88,13 +94,20 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
     }
   }
 
-  void _history({String desc, String amount, String time, String url}) async {
+  void _history(
+      {String desc,
+      String amount,
+      String time,
+      String url,
+      String user}) async {
     try {
       _firebaseFirestore.collection('history').doc().set({
         'desc': desc,
         'amount': amount,
         'time': time,
         'image': url,
+        'sender': user,
+        'receiver': user
       });
     } catch (e) {
       print(e);

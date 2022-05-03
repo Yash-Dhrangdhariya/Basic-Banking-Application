@@ -66,7 +66,7 @@ class _WithdrawMoneyState extends State<WithdrawMoney> {
     DocumentSnapshot documentSnapshot;
     try {
       documentSnapshot =
-      await _firebaseFirestore.collection('users').doc('$user').get();
+          await _firebaseFirestore.collection('users').doc('$user').get();
       setState(() {
         currentBalance = documentSnapshot.data()['balance'];
       });
@@ -89,7 +89,7 @@ class _WithdrawMoneyState extends State<WithdrawMoney> {
       setState(() {
         message = 'Transaction Unsuccessful';
         subMessage =
-        'You can\'t withdraw money with greater amount from balance.';
+            'You can\'t withdraw money with greater amount from balance.';
         isSuccessful = false;
       });
     } else {
@@ -105,6 +105,7 @@ class _WithdrawMoneyState extends State<WithdrawMoney> {
           amount: _amount,
           time: time,
           url: url,
+          user: _currentUser,
         );
       });
       _updateBalanceToUser(
@@ -113,13 +114,20 @@ class _WithdrawMoneyState extends State<WithdrawMoney> {
     }
   }
 
-  void _history({String desc, String amount, String time, String url}) async {
+  void _history(
+      {String desc,
+      String amount,
+      String time,
+      String url,
+      String user}) async {
     try {
       _firebaseFirestore.collection('history').doc().set({
         'desc': desc,
         'amount': amount,
         'time': time,
         'image': url,
+        'sender': user,
+        'receiver': user,
       });
     } catch (e) {
       print(e);
@@ -152,11 +160,11 @@ class _WithdrawMoneyState extends State<WithdrawMoney> {
               children: <Widget>[
                 _currentUser == null
                     ? Text(
-                  '*Select User to Withdraw Money',
-                )
+                        '*Select User to Withdraw Money',
+                      )
                     : Text(
-                  '$_currentUser\'s Balance is: $currentBalance /-Rs',
-                ),
+                        '$_currentUser\'s Balance is: $currentBalance /-Rs',
+                      ),
                 SizedBox(
                   height: 20,
                 ),
@@ -190,7 +198,7 @@ class _WithdrawMoneyState extends State<WithdrawMoney> {
                   child: TextFormField(
                     keyboardType: TextInputType.number,
                     validator: (val) =>
-                    val.isNotEmpty ? null : 'Please enter amount',
+                        val.isNotEmpty ? null : 'Please enter amount',
                     onChanged: (val) => _amount = val.toString(),
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
