@@ -3,7 +3,7 @@
 For Android & iOS.
 Using Flutter and Firebase for database.
 
-App Link: [(https://bit.ly/TheBankAppV4)](https://bit.ly/TheBankAppV2)
+App Link: https://bit.ly/TheBankAppV4
 YouTube Link: https://youtu.be/U6HvS_qO1fA
 
 ![Part 1](https://user-images.githubusercontent.com/72062416/121992281-f43c3980-cdbe-11eb-8cd9-b83509203994.jpeg)
