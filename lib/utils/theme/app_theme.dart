@@ -30,5 +30,15 @@ class AppTheme {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
     ),
+    bottomNavigationBarTheme: bottomNavigationBarTheme,
+  );
+
+  static const bottomNavigationBarTheme = BottomNavigationBarThemeData(
+    backgroundColor: AppColors.background,
+    showSelectedLabels: false,
+    elevation: 0,
+    type: BottomNavigationBarType.fixed,
+    showUnselectedLabels: false,
+    unselectedItemColor: AppColors.primary,
   );
 }

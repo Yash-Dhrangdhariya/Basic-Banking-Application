@@ -17,4 +17,5 @@ class AppColors {
   static const Color primary = Color(0xff52616B);
   static const Color secondary = Color(0xffC9D6DF);
   static const Color background = Color(0xffF0F5F9);
+  static const Color divider = Color(0xff1e212d);
 }

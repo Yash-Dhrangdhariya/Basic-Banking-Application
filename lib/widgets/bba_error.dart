@@ -1,5 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
+import '../constants/app_constants.dart';
+import '../resource/app_colors.dart';
+import '../resource/app_text_styles.dart';
 import '../values/app_strings.dart';
 
 class BbaError extends StatelessWidget {
@@ -16,11 +19,25 @@ class BbaError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Align(
       heightFactor: heightFactor,
-      child: Text(
-        errorMessage,
-        style: textStyle,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(
+            CupertinoIcons.exclamationmark_circle,
+            color: AppColors.text,
+            size: 48,
+          ),
+          const SizedBox(height: AppConstants.appPadding),
+          Text(
+            errorMessage,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+            style: AppTextStyles.error,
+          ),
+        ],
       ),
     );
   }
