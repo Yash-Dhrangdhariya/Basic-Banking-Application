@@ -30,6 +30,7 @@
 .pub-cache/
 .pub/
 /build/
+**/*.g.dart
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -44,3 +45,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Firebase
+firebase.json
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+/lib/firebase_options.dart

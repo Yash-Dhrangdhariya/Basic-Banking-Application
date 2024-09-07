@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>623769608188-94l5av9t83oh5p0ovu44j7jrghrqf4i0.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.623769608188-94l5av9t83oh5p0ovu44j7jrghrqf4i0</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAGFl9AQgFgFwm3MH07nlPgH5otQGl54IU</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.balance</string>
+	<string>com.yashdhrangdhariya.basic-banking-app</string>
 	<key>PROJECT_ID</key>
 	<string>new-yash-project</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:623769608188:ios:09bf80e9488eb57e185c79</string>
+	<string>1:623769608188:ios:c4c806aeb93d6d7a185c79</string>
 </dict>
 </plist>

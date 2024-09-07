@@ -1,4 +1,4 @@
-package com.example.balance
+package com.yashdhrangdhariya.basic_banking_app
 
 import io.flutter.embedding.android.FlutterActivity
 
