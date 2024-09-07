@@ -1,6 +1,7 @@
-import 'package:basic_banking_app/utils/helpers/device_info_helper.dart';
 import 'package:flutter/services.dart';
 import 'package:vibration/vibration.dart';
+
+import 'device_info_helper.dart';
 
 class BbaHapticFeedback {
   const BbaHapticFeedback._();

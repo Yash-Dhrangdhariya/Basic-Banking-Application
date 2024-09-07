@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../constants/app_constants.dart';
 import '../resource/app_colors.dart';
@@ -7,16 +8,17 @@ import '../utils/extensions.dart';
 
 class BbaLoading extends StatelessWidget {
   const BbaLoading({
-    this.indicatorColor = AppColors.black,
+    this.indicatorColor = AppColors.text,
     this.iosIndicatorRadius = AppConstants.iosDefaultIndicatorRadius,
+    this.nativeLoader = false,
     this.message,
     this.style,
     this.padding = EdgeInsets.zero,
     this.androidIndicatorStrokeWidth =
         AppConstants.androidDefaultIndicatorStrokeWidth,
-    super.key,
     this.widthFactor,
     this.heightFactor,
+    super.key,
   });
 
   final String? message;
@@ -27,6 +29,7 @@ class BbaLoading extends StatelessWidget {
   final EdgeInsets padding;
   final double? widthFactor;
   final double? heightFactor;
+  final bool nativeLoader;
 
   @override
   Widget build(BuildContext context) {
@@ -49,18 +52,23 @@ class BbaLoading extends StatelessWidget {
               ),
             Flexible(
               child: RepaintBoundary(
-                child: switch (context.currentPlatform) {
-                  TargetPlatform.iOS ||
-                  TargetPlatform.macOS =>
-                    CupertinoActivityIndicator(
-                      color: indicatorColor,
-                      radius: iosIndicatorRadius,
-                    ),
-                  _ => CircularProgressIndicator(
-                      color: indicatorColor,
-                      strokeWidth: androidIndicatorStrokeWidth,
-                    ),
-                },
+                child: nativeLoader
+                    ? switch (context.currentPlatform) {
+                        TargetPlatform.iOS ||
+                        TargetPlatform.macOS =>
+                          CupertinoActivityIndicator(
+                            color: indicatorColor,
+                            radius: iosIndicatorRadius,
+                          ),
+                        _ => CircularProgressIndicator(
+                            color: indicatorColor,
+                            strokeWidth: androidIndicatorStrokeWidth,
+                          ),
+                      }
+                    : SpinKitFadingCircle(
+                        color: indicatorColor,
+                        size: 40,
+                      ),
               ),
             ),
           ],
