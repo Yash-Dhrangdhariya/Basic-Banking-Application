@@ -1,3 +1,4 @@
+import 'package:basic_banking_app/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -32,7 +33,9 @@ class TransactionButton extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           title,
-          style: const TextStyle(color: Colors.black54),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: context.appText.subHeadline,
         ),
       ],
     );

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:basic_banking_app/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -107,10 +108,10 @@ class _BbaButtonState extends State<BbaButton> {
                                           textAlign: TextAlign.center,
                                           overflow: TextOverflow.ellipsis,
                                           style: widget.textStyle == null
-                                              ? TextStyle(
-                                                  fontSize: 16,
-                                                  color: widget.textColor,
-                                                  fontWeight: FontWeight.w500,
+                                              ? context.appText.headline
+                                                  .copyWith(
+                                                  color: widget.textColor ??
+                                                      AppColors.background,
                                                 )
                                               : widget.textStyle?.copyWith(
                                                   color: widget.enabled

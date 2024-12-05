@@ -1,3 +1,4 @@
+import 'package:basic_banking_app/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -31,12 +32,22 @@ class TransferMoneyScreen extends StatelessWidget {
                 builder: (_) => RichText(
                   text: TextSpan(
                     children: [
-                      if (store.selectedSender != null)
-                        TextSpan(text: 'From: ${store.selectedSender?.name} '),
-                      if (store.selectedReceiver != null)
-                        TextSpan(text: 'To: ${store.selectedReceiver?.name}'),
+                      if (store.selectedSender != null) ...[
+                        const TextSpan(text: 'From: '),
+                        TextSpan(
+                          text: store.selectedSender?.name,
+                          style: context.appText.sbSubHeadline,
+                        ),
+                      ],
+                      if (store.selectedReceiver != null) ...[
+                        const TextSpan(text: ' To: '),
+                        TextSpan(
+                          text: store.selectedReceiver?.name,
+                          style: context.appText.sbSubHeadline,
+                        ),
+                      ],
                     ],
-                    style: const TextStyle(color: AppColors.text),
+                    style: context.appText.subHeadline,
                   ),
                 ),
               ),

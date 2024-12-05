@@ -1,8 +1,8 @@
+import 'package:basic_banking_app/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../constants/app_constants.dart';
 import '../resource/app_colors.dart';
-import '../resource/app_text_styles.dart';
 import '../values/app_strings.dart';
 
 class BbaError extends StatelessWidget {
@@ -35,7 +35,7 @@ class BbaError extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
-            style: AppTextStyles.error,
+            style: context.appText.subHeadline,
           ),
         ],
       ),

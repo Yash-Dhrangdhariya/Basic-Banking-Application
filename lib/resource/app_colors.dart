@@ -18,4 +18,14 @@ class AppColors {
   static const Color secondary = Color(0xffC9D6DF);
   static const Color background = Color(0xffF0F5F9);
   static const Color divider = Color(0xff1e212d);
+
+  // Label
+  static const Color labelPrimary = black;
+  static const Color labelPrimaryDark = white;
+  static const Color labelSecondary = Color(0x993C3C43);
+  static const Color labelSecondaryDark = Color(0x99EBEBF5);
+  static const Color labelTertiary = Color(0x4D3C3C43);
+  static const Color labelTertiaryDark = Color(0x4DEBEBF5);
+  static const Color labelQuaternary = Color(0x2E3C3C43);
+  static const Color labelQuaternaryDark = Color(0x29EBEBF5);
 }

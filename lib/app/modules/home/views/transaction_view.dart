@@ -1,3 +1,4 @@
+import 'package:basic_banking_app/widgets/bba_no_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -16,6 +17,7 @@ class TransactionView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          const BbaNoData(),
           TransactionButton(
             title: 'Add Money',
             icon: Vectors.walletAdd,

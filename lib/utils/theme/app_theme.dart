@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../resource/app_colors.dart';
@@ -11,11 +12,12 @@ class AppTheme {
     useMaterial3: true,
     fontFamily: FontFamily.regular,
     scaffoldBackgroundColor: AppColors.background,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       elevation: 0,
+      centerTitle: false,
       scrolledUnderElevation: 0,
-      titleTextStyle: AppTextStyles.appBar,
       backgroundColor: Colors.transparent,
+      titleTextStyle: AppTextStyles.lightAppText.sbTitle1,
     ),
     dialogTheme: const DialogTheme(
       elevation: 0,
@@ -31,14 +33,19 @@ class AppTheme {
       ),
     ),
     bottomNavigationBarTheme: bottomNavigationBarTheme,
+    cupertinoOverrideTheme: const CupertinoThemeData(
+      barBackgroundColor: AppColors.background,
+      primaryColor: AppColors.text,
+    ),
   );
 
-  static const bottomNavigationBarTheme = BottomNavigationBarThemeData(
-    backgroundColor: AppColors.background,
-    showSelectedLabels: false,
+  static final bottomNavigationBarTheme = BottomNavigationBarThemeData(
     elevation: 0,
-    type: BottomNavigationBarType.fixed,
+    showSelectedLabels: false,
     showUnselectedLabels: false,
+    type: BottomNavigationBarType.fixed,
+    backgroundColor: AppColors.background,
     unselectedItemColor: AppColors.primary,
+    selectedLabelStyle: AppTextStyles.lightAppText.body,
   );
 }

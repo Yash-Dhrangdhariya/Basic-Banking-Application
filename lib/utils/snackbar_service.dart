@@ -1,3 +1,4 @@
+import 'package:basic_banking_app/resource/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -10,11 +11,7 @@ class SnackBarService {
 
   static GlobalKey<ScaffoldMessengerState> get key => _key;
 
-  static void showSnack(
-    String message, {
-    String? subMessage,
-    String? icon,
-  }) {
+  static void showSnack(String message, {String? subMessage, String? icon}) {
     _key.currentState
       ?..removeCurrentSnackBar()
       ..showSnackBar(
@@ -34,20 +31,21 @@ class SnackBarService {
                 ),
               Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       message,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.background,
-                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.darkAppText.sbSubHeadline,
                     ),
                     if (subMessage?.isNotEmpty ?? false) ...[
                       const SizedBox(height: 2),
                       Text(
                         subMessage!,
-                        style: const TextStyle(color: AppColors.primary),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.darkAppText.subHeadline,
                       ),
                     ],
                   ],

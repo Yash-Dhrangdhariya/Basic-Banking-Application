@@ -1,3 +1,4 @@
+import 'package:basic_banking_app/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../../models/user_dm.dart';
@@ -41,17 +42,14 @@ class UserTile extends StatelessWidget {
                   user.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: context.appText.sbTitle3,
                 ),
                 const SizedBox(height: 2),
                 Text(
                   'Email: ${user.email}',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(color: AppColors.primary),
+                  style: context.appText.subHeadline,
                 ),
               ],
             ),
@@ -70,10 +68,7 @@ class UserTile extends StatelessWidget {
               '${user.balance.toStringAsFixed(2)}/- Rs',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                color: AppColors.primary,
-                fontWeight: FontWeight.w500,
-              ),
+              style: context.appText.sbSubHeadline,
             ),
           ),
         ],

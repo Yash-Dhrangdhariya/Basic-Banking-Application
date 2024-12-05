@@ -1,3 +1,4 @@
+import 'package:basic_banking_app/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/app_constants.dart';
@@ -44,17 +45,17 @@ class HistoryTile extends StatelessWidget {
                 children: [
                   Text(
                     'Amount: ${history.amount}/-Rs',
-                    style: const TextStyle(fontSize: 13),
+                    style: context.appText.sbSubHeadline,
                   ),
                   const SizedBox(height: 2),
                   Text(
                     'Date: ${history.time}',
-                    style: const TextStyle(fontSize: 13),
+                    style: context.appText.caption1,
                   ),
                   const SizedBox(height: 2),
                   Text(
                     history.desc,
-                    style: const TextStyle(fontSize: 12),
+                    style: context.appText.caption1,
                   ),
                 ],
               ),

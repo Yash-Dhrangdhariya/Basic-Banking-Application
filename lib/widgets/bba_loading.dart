@@ -47,7 +47,9 @@ class BbaLoading extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: AppConstants.appPadding),
                 child: Text(
                   message!,
-                  style: style,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: style ?? context.appText.subHeadline,
                 ),
               ),
             Flexible(

@@ -22,6 +22,8 @@ class AppNavBar extends StatelessWidget {
             currentIndex: currentIndex,
             onTap: onTap,
             items: items,
+            activeColor: AppColors.text,
+            inactiveColor: AppColors.primary,
           )
         : BottomNavigationBar(
             currentIndex: currentIndex,

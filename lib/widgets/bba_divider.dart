@@ -4,10 +4,10 @@ import '../resource/app_colors.dart';
 
 class BbaDivider extends StatelessWidget {
   const BbaDivider({
-    this.color = AppColors.divider,
-    this.height,
-    this.thickness = 6,
+    this.color = AppColors.secondary,
     this.margin = EdgeInsets.zero,
+    this.thickness = 2,
+    this.height,
     super.key,
   });
 

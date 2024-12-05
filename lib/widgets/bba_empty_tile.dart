@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants/app_constants.dart';
-import '../resource/app_colors.dart';
+import '../utils/extensions.dart';
 
 class BbaEmptyTile extends StatelessWidget {
   const BbaEmptyTile({
@@ -43,22 +43,17 @@ class BbaEmptyTile extends StatelessWidget {
           const SizedBox(height: AppConstants.appPadding),
           Text(
             title,
+            maxLines: 1,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 20,
-              color: AppColors.text,
-              fontWeight: FontWeight.bold,
-            ),
+            overflow: TextOverflow.ellipsis,
+            style: context.appText.sbTitle3,
           ),
           if (description?.isNotEmpty ?? false) ...[
             SizedBox(height: textSpacing),
             Text(
               description!,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 16,
-                color: AppColors.primary,
-              ),
+              style: context.appText.subHeadline,
             ),
           ],
           if (child != null) ...[
